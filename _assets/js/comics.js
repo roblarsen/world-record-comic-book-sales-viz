@@ -40,9 +40,9 @@ const list = d3.select('#data')
   .append('ul').attr('class','list-group');
 
 const x = d3.scaleTime()
-  .rangeRound([0, width - xMargin]);
+  .rangeRound([1, width - xMargin]);
 
-const y = d3.scaleLinear()
+const y = d3.scaleLog(0,100)
   .rangeRound([height - yMargin, 0]);
 
 
@@ -76,8 +76,9 @@ d3.json('data/books.json').then((data) => {
     d3.min(sales, (d) => {
       return moment(d.date).startOf('year').toDate();
     }), moment().toDate()]);
-  y.domain([0, d3.max(sales, (d) => {
-    return Math.ceil(d.price / 500000) * 500000;
+  y.domain([250, d3.max(sales, (d) => {
+
+    return Math.ceil(d.price / 6000000) * 6000000;
   })]);
   const years = parseInt(moment().format('YYYY')) - parseInt(moment(x.domain()[0]).format('YYYY'));
 
