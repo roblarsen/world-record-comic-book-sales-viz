@@ -13,8 +13,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.prod.ts",
     "start": "webpack serve --config webpack.config.dev.ts",
-     "lint": "eslint 'scripts/**/*.{ts,tsx}'",
-  "lint:fix": "eslint 'scripts/**/*.{ts,tsx}' --fix"
+    "lint": "eslint 'scripts/**/*.{ts,tsx}'",
+    "lint:fix": "eslint 'scripts/**/*.{ts,tsx}' --fix"
   },
   "devDependencies": {
     "@eslint/css": "^0.7.0",
@@ -43,5 +43,9 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.2.1",
     "webpack-merge": "^6.0.1"
+  },
+  "dependencies": {
+    "moment": "^2.30.1",
+    "save-dev": "^0.0.1-security"
   }
 }
